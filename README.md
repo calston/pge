@@ -27,9 +27,10 @@ A GUI widget toolkit for building graphical DOS applications in Turbo Pascal 7.
 2. [Examples](#2-examples)
 3. [Getting Started](#3-getting-started)
 4. [Extending PGE](#4-extending-pge)
-5. [Compiling](#5-compiling)
-6. [Module List](#6-module-list)
-7. [Licence](#7-licence)
+5. [Docker Development Environment](#5-docker-development-environment)
+6. [Compiling](#6-compiling)
+7. [Module List](#7-module-list)
+8. [Licence](#8-licence)
 
 ---
 
@@ -177,7 +178,50 @@ end.
 
 ---
 
-## 5. Compiling
+## 5. Docker Development Environment
+
+A Docker-based environment is provided that runs DOSBox-X with Turbo Pascal 7 inside a container, accessible from any browser via a built-in web interface.
+
+### Prerequisites
+
+- Docker
+- Turbo Pascal 7 installation files placed in `tp7/` (not included — Borland released TP7 as freeware for non-commercial use)
+
+### Build and run
+
+```bash
+bash rundocker.sh
+```
+
+This builds the image and starts the container. The first build will take a few minutes to download dependencies.
+
+### Accessing the environment
+
+Open a browser and go to:
+
+```
+http://localhost:14500
+```
+
+DOSBox-X will launch automatically and run `build.bat`, which compiles all modules and examples.
+
+To develop iteratively, the `src/`, `examples/`, and `build.bat` are volume-mounted — changes on the host are immediately visible inside the container without a rebuild. Just re-run `build.bat` from within DOSBox-X to recompile.
+
+### Mouse input
+
+Mouse capture is required for full mouse support. Click inside the DOSBox-X window in your browser, then press **Ctrl+F10** to capture the mouse. Press **Ctrl+F10** again to release it.
+
+### Native Xpra client (better performance)
+
+For lower latency, install the [Xpra client](https://github.com/Xpra-org/xpra/releases) and connect with:
+
+```
+xpra attach tcp://localhost:14500
+```
+
+---
+
+## 6. Compiling
 
 ### Using `build.bat`
 
@@ -208,7 +252,7 @@ uses myunits, {$I pge.inc}
 
 ---
 
-## 6. Module List
+## 7. Module List
 
 | Module | Description |
 |--------|-------------|
@@ -234,7 +278,7 @@ uses myunits, {$I pge.inc}
 
 ---
 
-## 7. Licence
+## 8. Licence
 
     The Pascal Graphical Environment
     Copyright (C) 2000 Colin Alston
