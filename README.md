@@ -190,7 +190,9 @@ A Docker-based environment is provided that runs DOSBox-X with Turbo Pascal 7 in
 ### Build and run
 
 ```bash
-bash rundocker.sh
+docker build -t pge .
+
+docker run --rm -v ./src:/dos/src -v ./examples:/dos/examples -v ./build.bat:/dos/build.bat -p 14500:14500 pge
 ```
 
 This builds the image and starts the container. The first build will take a few minutes to download dependencies.
