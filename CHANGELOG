@@ -1,0 +1,113 @@
+
+Version 1.01
+Log started on 30-05-2000
+- Mouse Interface added to alow easy modification of mouse control.
+- Some minor improvements.
+- Found some useless stuff (disableing the cursor twice in a row?).
+
+Version 1.02
+Log started on 30-05-2000
+- Found+Fixing resize bug.
+- More arbitory bits found+remove.
+- Finding lots of old construction points, debuggers and variables.
+
+Version 1.03
+Log started on 15-06-2000
+- Somebody Buggered up the last release and over wrote it with an old one.
+- Found Memory leak in bitmap.pas, cant find how to fix it.
+- Fixed Memory leak.
+
+Version 2.0
+LOADS OF NEW STUFF
+- Better TEdit
+- Added TMenu
+- Added TPopup
+- Fixed a stack of bugs
+
+Version 2.1
+More Stuff
+- Made a stoopid gui thing (gui.pas)
+  better than loader
+- Fixed some stuff in TPopup
+  -Added TPopup.Popup. Duuu stoopid me forgot to add a force control for the thing
+   Well now you can force it to popup, ie if u click on a button.
+- Added a usefull thing TClock, and i have added a XPGE for more expansion
+- Better window handeling in some of the demos (the close buttons were unresponsive)
+- FIXED THE STOOPID ERROR 004!!!! in Loader.pas
+  Duuu, i wasnt loading the files properly
+- Other stupid crap
+- Wish i could change res (not untill somebody comes up with a better driver)
+- looking into something other than BGI
+- I re-organised the stuff so the lirarys are in the PGE directory.
+- Replaced BUILD.BAT with SETUP.EXE
+  (Build.bat is still there but setup is slightly better
+   , only wont work with new subdir ie C:\gui\pge if C:\gui 
+   does not exist. Well try it but dont say i didnt warn u)
+
+Version 2.11
+- Err, i decided that i would finish CIF and i did, wow
+  So it works. TCIF in the CIF unit.
+  To se how to use it look at the gui.pas
+   Allso see the PGE directory and the files
+     TestCIF.exe & TestCIF.pas
+     WriteCIF.exe & TriteCIF.Pas
+     ico2cif.exe & ico2cif.bat
+  The CIF library has suport for writing a CIF but it is now implemented (it would take
+  about 5 lines to do so, but... ill do it another time)
+- I fixed a stoopid error in the IO, i added suport for writing to files, but didnt add suport
+  to open a file for writing, STOOPIDDD!!
+- other junk
+- included some CIF's
+- Looked some museum PGE's
+  Damb its come far!
+- Included fonts, I have neglected to do this before ( i dont know why)
+  But now you can use fonts i supose. (see gui.pas)
+- You should use build.bat, if you arnt a beginner. Its more powerfull and it compiles
+  without copying and junk.
+*PLEASE NOTE: CIF is nothing to do with GIF it is COMPLEATLY DIFERENT.
+
+Version 3.0
+- A whole new PGE look.
+- Finaly compleatly ovehauled the TEdit control, YAY its now actualy slightly usefull!!!!!
+- Added proper cursors
+- CIF2, compleatly changed the CIF format, faster and more reliable. Smaller files too.
+- Faster and smoother FillRectangle, stoopid me forgot that TP comes with the Bar procedure so i used that insted.
+  + this dramaticly improved the speed, not that its fast...
+- fixed some silly things in the window moving and resizing, it now gets done properly
+- Fixed some buggy apps, GUI is still very slow...
+
+Version 3.0B
+- Masive engine overhaul, it is looking much smoother to me now
+- Added sliders, they are nice and smooth too
+- Added some 3d effect to the drop down menu's (see Editor.exe)
+- Nice textbox control (see slider.exe)
+- Fixed some stack and memory control bug
+
+Version 4.0
+- New engine.
+- VESA!!!! RESOLUTIONS UP TO 1600x1200!!! 256 Colors 
+- Smooth!! (well, i have a prety beefy system, so i need some response to that one :) )
+- MUCH better popup dialog's 
+- More conservitive redrawing ect. No redrawing whole controls when only small piece changes
+- Fixed Buggy window movement.
+- Very Cool Title bars! :)
+- Compleate change!
+- Lots of bug fixes and ALOT faster due to new engine.
+- Added round titile bars and round buttons
+- Made some adjustments here and there
+
+Version 4.1
+- Added Icons to Dialog boxes.
+- Added Icon Lists.. Not quite finished...
+- No longer need to use "Uses PGE, video, ...."
+  Now just use {$I Include PGE.INC} to use PGE
+- Fixed PCX Buttons, now using a memory bitmap.
+- Made a CFG Program to modify the colour themes ect.
+- Implemented new method of TEdit. Can now use arrow keys to properly edit strings!
+
+
+To do:
+- Work on window drawing a bit
+- Fix icon list boxes
+- Implement some sort of memory bitmap system.. hopefuly with more than
+  a 64Kb limit...
